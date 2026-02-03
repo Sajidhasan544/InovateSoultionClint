@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+
+/* Additional styles for footer */
+footer {
+  background: linear-gradient(135deg, #111827 0%, #1f2937 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #f59e0b, transparent);
+}
+
+/* Scroll to top button animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.group:hover .group-hover\\:-translate-y-1 {
+  animation: float 1.5s ease-in-out infinite;
+}
+
+
+/* Add these animations to your CSS */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Custom shimmer effect for skeleton loader */
+@keyframes shimmer {
+  0% {
+    background-position: -200px 0;
+  }
+  100% {
+    background-position: 200px 0;
+  }
+}
+
+.skeleton-shimmer {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200px 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+.dark .skeleton-shimmer {
+  background: linear-gradient(90deg, #2d3748 25%, #4a5568 50%, #2d3748 75%);
+  background-size: 200px 100%;
+  animation: shimmer 1.5s infinite;
+}
